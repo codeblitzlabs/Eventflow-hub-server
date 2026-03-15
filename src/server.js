@@ -7,6 +7,8 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import eventRoutes from './routes/events.js';
 import organizerRoutes from './routes/organizer.js';
+import registrationRoutes from './routes/registrations.js';
+
 
 // Load env vars
 dotenv.config();
@@ -32,7 +34,7 @@ app.get('/', (req, res) => {
 app.use("/api/auth", authRoutes )
 app.use('/api/events', eventRoutes);
 app.use("/api/organizer", organizerRoutes)
-
+app.use('/api/registrations', registrationRoutes);
 
 
 // Error handling middleware
