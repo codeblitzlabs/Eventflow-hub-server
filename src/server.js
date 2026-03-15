@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
 import eventRoutes from './routes/events.js';
+import organizerRoutes from './routes/organizer.js';
 
 // Load env vars
 dotenv.config();
@@ -30,6 +31,8 @@ app.get('/', (req, res) => {
 
 app.use("/api/auth", authRoutes )
 app.use('/api/events', eventRoutes);
+app.use("/api/organizer", organizerRoutes)
+
 
 
 // Error handling middleware
